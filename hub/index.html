@@ -52,4 +52,20 @@ footer{text-align:center;color:var(--soft);font-size:13px;margin-top:22px}
   <div class="info"><h2>Bus Buddies</h2><p>Sort the colourful bus jam.</p><div class="row"><a class="btn primary" href="https://apps.apple.com/app/id6821832967?ct=ig_hub_bus-buddies">Get on App Store</a></div></div>
 </section>
 <footer>Made by one indie developer. Thanks for playing.</footer>
-</main></body></html>
+</main>
+<script>
+(function(){
+  var U='https://uazlpittxtdcghoeanzt.supabase.co/rest/v1/hub_events',K='sb_publishable_Am2sEGCNgaaEtkl0O1sVqg_Li5A7-mR';
+  var src=(new URLSearchParams(location.search).get('src')||'direct').slice(0,60);
+  function send(event,game){
+    try{fetch(U,{method:'POST',keepalive:true,headers:{apikey:K,Authorization:'Bearer '+K,'Content-Type':'application/json'},body:JSON.stringify({event:event,game:game||null,source:src})}).catch(function(){});}catch(e){}
+  }
+  try{if(!sessionStorage.getItem('hv')){sessionStorage.setItem('hv','1');send('visit');}}catch(e){send('visit');}
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a.btn');if(!a)return;
+    var card=a.closest('.card');var g=card&&card.querySelector('h2');
+    send('tap',(g?g.textContent:'')+(a.href.indexOf('apps.apple.com')>-1?' (store)':' (web)'));
+  });
+})();
+</script>
+</body></html>
