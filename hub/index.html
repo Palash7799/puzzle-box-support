@@ -3,55 +3,115 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Unrealistic Studio: Games</title>
 <meta name="description" content="Free mobile games by Unrealistic Studio.">
+<meta property="og:title" content="Unrealistic Studio: Free Games"><meta property="og:image" content="https://palash7799.github.io/puzzle-box-support/hub/img/blob-hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fbf6ec;--card:#fff;--ink:#2a1f35;--soft:#6c6076;--line:#eadfce;--accent:#7b3fe4}
-@media(prefers-color-scheme:dark){:root{--bg:#16111f;--card:#211a2e;--ink:#f3edf9;--soft:#b3a7c4;--line:#352b47;--accent:#a47bff}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:28px 16px 48px}
-main{max-width:520px;margin:0 auto}
-h1{font-size:26px;margin:0 0 4px;text-align:center}
-.sub{text-align:center;color:var(--soft);margin:0 0 22px}
-.card{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;margin-bottom:12px}
-.card img{border-radius:16px;flex:none}
-.info{min-width:0}
-h2{font-size:18px;margin:0}
-.info p{margin:2px 0 8px;color:var(--soft);font-size:14px}
-.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.btn{display:inline-block;padding:9px 14px;border-radius:999px;font-weight:700;font-size:14px;text-decoration:none;background:var(--accent);color:#fff}
-.soon{font-size:13px;color:var(--soft)}
-footer{text-align:center;color:var(--soft);font-size:13px;margin-top:22px}
+*{box-sizing:border-box;margin:0}
+html{background:#2a1647}
+body{min-height:100vh;color:#fff;font:400 16px/1.4 Fredoka,system-ui,sans-serif;background:
+ linear-gradient(180deg,rgba(42,22,71,.55) 0%,rgba(42,22,71,.78) 45%,#1d0f33 100%),url(img/bg.jpg) center top/cover fixed;padding:26px 16px 56px;overflow-x:hidden}
+main{max-width:520px;margin:0 auto;position:relative}
+.blobs{display:flex;justify-content:center;gap:10px;height:74px;align-items:flex-end}
+.blob{width:54px;height:54px;border-radius:50% 50% 46% 46%;position:relative;animation:bob 2.4s ease-in-out infinite;box-shadow:inset -6px -8px 0 rgba(0,0,0,.14),inset 6px 6px 0 rgba(255,255,255,.28);border:3px solid #1a0f2b}
+.blob::before,.blob::after{content:"";position:absolute;top:17px;width:13px;height:16px;background:#fff;border:2px solid #1a0f2b;border-radius:50%}
+.blob::before{left:9px}.blob::after{right:9px}
+.blob i{position:absolute;top:24px;width:6px;height:7px;background:#1a0f2b;border-radius:50%;z-index:1}
+.blob i:nth-child(1){left:14px}.blob i:nth-child(2){right:14px}
+.b1{background:#a45cff;animation-delay:0s}.b2{background:#3ed17a;width:64px;height:64px;animation-delay:.3s}.b3{background:#ff9b3d;animation-delay:.6s}
+@keyframes bob{0%,100%{transform:translateY(0) scale(1,1)}50%{transform:translateY(-10px) scale(.96,1.05)}}
+h1{font:400 42px/1 "Luckiest Guy",cursive;text-align:center;letter-spacing:1px;margin-top:8px;color:#ffd84a;-webkit-text-stroke:2px #1a0f2b;paint-order:stroke fill;text-shadow:0 5px 0 #1a0f2b,0 9px 14px rgba(0,0,0,.45);transform:rotate(-2deg)}
+.sub{text-align:center;margin:10px 0 22px;font-weight:600;color:#fff3c8;text-shadow:0 2px 6px rgba(0,0,0,.5)}
+.btn{display:inline-block;text-decoration:none;color:#fff;background:#8f4dff;font:400 17px/1 "Luckiest Guy",cursive;letter-spacing:.5px;padding:13px 20px 11px;border-radius:14px;border:3px solid #1a0f2b;box-shadow:0 5px 0 #1a0f2b;transition:transform .1s,box-shadow .1s;-webkit-tap-highlight-color:transparent}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 #1a0f2b}
+.hero{position:relative;border-radius:22px;overflow:hidden;border:4px solid #1a0f2b;box-shadow:0 8px 0 #1a0f2b,0 18px 30px rgba(0,0,0,.45);margin-bottom:34px;transform:rotate(-.6deg)}
+.hero>img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+.hero .over{position:absolute;inset:auto 0 0 0;padding:44px 16px 16px;background:linear-gradient(0deg,rgba(20,8,38,.95),rgba(20,8,38,0));display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.hero h2{font:400 28px/1 "Luckiest Guy",cursive;color:#fff;text-shadow:0 3px 0 #1a0f2b}
+.hero p{font-size:14.5px;color:#f0e6ff;max-width:34ch}
+.hero .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:4px}
+.hero .btn{background:#ff7a2f;font-size:19px;animation:pulse 1.8s ease-in-out infinite}
+.hero small{font-size:12.5px;color:#d9c8f5}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.badge{position:absolute;top:12px;left:12px;background:#ffd84a;color:#1a0f2b;font:400 15px/1 "Luckiest Guy",cursive;padding:7px 11px 5px;border-radius:10px;border:3px solid #1a0f2b;transform:rotate(-6deg);box-shadow:0 3px 0 #1a0f2b}
+h3.sec{font:400 22px/1 "Luckiest Guy",cursive;text-align:center;margin:6px 0 16px;color:#fff;text-shadow:0 3px 0 #1a0f2b;letter-spacing:.5px}
+.card{display:flex;gap:14px;align-items:center;margin-bottom:18px;padding:14px;border-radius:22px;background:rgba(255,255,255,.12);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:3px solid #1a0f2b;box-shadow:0 6px 0 #1a0f2b,inset 0 0 0 2px var(--c)}
+.card.right{flex-direction:row-reverse}
+.shot{width:104px;height:auto;border-radius:16px;border:3px solid #1a0f2b;flex:none;box-shadow:0 5px 0 #1a0f2b;transform:rotate(-4deg);background:#222}
+.card.right .shot{transform:rotate(4deg)}
+.info{min-width:0;flex:1}
+.head{display:flex;align-items:center;gap:10px}
+.ico{border-radius:13px;border:2px solid #1a0f2b;flex:none}
+.card h2{font:400 22px/1 "Luckiest Guy",cursive;color:var(--c);-webkit-text-stroke:1.2px #1a0f2b;paint-order:stroke fill;text-shadow:0 3px 0 #1a0f2b}
+.card p{margin:8px 0 12px;font-size:14.5px;color:#f1e9ff}
+.card .btn{background:var(--c);color:#1a0f2b;font-size:15px;padding:11px 15px 9px}
+footer{text-align:center;margin-top:26px;color:#e8dcff;font-size:13.5px;text-shadow:0 2px 6px rgba(0,0,0,.6)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
 </style></head><body><main>
+<div class="blobs" aria-hidden="true"><div class="blob b1"><i></i><i></i></div><div class="blob b2"><i></i><i></i></div><div class="blob b3"><i></i><i></i></div></div>
 <h1>Unrealistic Studio</h1>
-<p class="sub">Free games to play anywhere</p>
-<section class="card">
-  <img src="icons/blob-builders.jpg" alt="Blob Builders icon" width="72" height="72">
-  <div class="info"><h2>Blob Builders</h2><p>Build wobbly jelly bridges. Squishy physics puzzles.</p><div class="row"><a class="btn primary" href="https://palash7799.github.io/puzzle-box-support/play/blob-builders/?ct=ig_hub">Play free in your browser</a><span class="soon">App Store version coming soon</span></div></div>
+<p class="sub">Free games, made by one very sleepy dev</p>
+
+<section class="hero card-hero">
+  <span class="badge">NEW</span>
+  <img src="img/blob-hero.jpg" alt="Blob Builders" width="900" height="563">
+  <div class="over">
+    <h2>Blob Builders</h2>
+    <p>Build wobbly jelly bridges and lead your blobs home. 45 levels of squishy physics fun.</p>
+    <div class="row"><a class="btn" href="https://palash7799.github.io/puzzle-box-support/play/blob-builders/?ct=ig_hub">Play free now</a><small>Plays in your browser. App Store version coming soon.</small></div>
+  </div>
 </section>
-<section class="card">
-  <img src="icons/bean-rush.jpg" alt="Bean Rush icon" width="72" height="72">
-  <div class="info"><h2>Bean Rush</h2><p>Wild West crowd-runner. Gather your bean gang!</p><div class="row"><a class="btn primary" href="https://apps.apple.com/app/id6822902566?ct=ig_hub_bean-rush">Get on App Store</a></div></div>
+
+<h3 class="sec">More games to try</h3>
+<section class="card left" style="--c:#f6a23a">
+  <img class="shot" src="img/bean-rush.jpg" alt="Bean Rush screenshot" loading="lazy" width="120" height="260">
+  <div class="info">
+    <div class="head"><img class="ico" src="icons/bean-rush.jpg" alt="" width="52" height="52"><h2>Bean Rush</h2></div>
+    <p>Wild West crowd-runner. Gather your bean gang and rush the outlaws!</p>
+    <a class="btn" href="https://apps.apple.com/app/id6822902566?ct=ig_hub_bean-rush">Get on App Store</a>
+  </div>
 </section>
-<section class="card">
-  <img src="icons/wallfare.jpg" alt="Wallfare icon" width="72" height="72">
-  <div class="info"><h2>Wallfare</h2><p>Quoridor-style strategy. Outsmart with walls.</p><div class="row"><a class="btn primary" href="https://apps.apple.com/app/id6801561450?ct=ig_hub_wallfare">Get on App Store</a></div></div>
+<section class="card right" style="--c:#7b6cf0">
+  <img class="shot" src="img/wallfare.jpg" alt="Wallfare screenshot" loading="lazy" width="120" height="260">
+  <div class="info">
+    <div class="head"><img class="ico" src="icons/wallfare.jpg" alt="" width="52" height="52"><h2>Wallfare</h2></div>
+    <p>Quoridor-style strategy. Place walls, block rivals, win the race.</p>
+    <a class="btn" href="https://apps.apple.com/app/id6801561450?ct=ig_hub_wallfare">Get on App Store</a>
+  </div>
 </section>
-<section class="card">
-  <img src="icons/gulp-city.jpg" alt="Gulp City icon" width="72" height="72">
-  <div class="info"><h2>Gulp City</h2><p>Steer a hungry hole and swallow the whole city.</p><div class="row"><a class="btn primary" href="https://apps.apple.com/app/id6821887239?ct=ig_hub_gulp-city">Get on App Store</a></div></div>
+<section class="card left" style="--c:#4cc46a">
+  <img class="shot" src="img/gulp-city.jpg" alt="Gulp City screenshot" loading="lazy" width="120" height="260">
+  <div class="info">
+    <div class="head"><img class="ico" src="icons/gulp-city.jpg" alt="" width="52" height="52"><h2>Gulp City</h2></div>
+    <p>Steer a hungry hole and swallow the whole 3D city.</p>
+    <a class="btn" href="https://apps.apple.com/app/id6821887239?ct=ig_hub_gulp-city">Get on App Store</a>
+  </div>
 </section>
-<section class="card">
-  <img src="icons/puzzle-box.jpg" alt="Puzzle Box icon" width="72" height="72">
-  <div class="info"><h2>Puzzle Box</h2><p>8 cozy puzzles in one app.</p><div class="row"><a class="btn primary" href="https://apps.apple.com/app/id6818438354?ct=ig_hub_puzzle-box">Get on App Store</a></div></div>
+<section class="card right" style="--c:#ff7aa8">
+  <img class="shot" src="img/puzzle-box.jpg" alt="Puzzle Box screenshot" loading="lazy" width="120" height="260">
+  <div class="info">
+    <div class="head"><img class="ico" src="icons/puzzle-box.jpg" alt="" width="52" height="52"><h2>Puzzle Box</h2></div>
+    <p>Eight cozy puzzles in one little box.</p>
+    <a class="btn" href="https://apps.apple.com/app/id6818438354?ct=ig_hub_puzzle-box">Get on App Store</a>
+  </div>
 </section>
-<section class="card">
-  <img src="icons/block-blossom.jpg" alt="Block Blossom icon" width="72" height="72">
-  <div class="info"><h2>Block Blossom</h2><p>Relaxing block puzzle garden.</p><div class="row"><a class="btn primary" href="https://apps.apple.com/app/id6821702244?ct=ig_hub_block-blossom">Get on App Store</a></div></div>
+<section class="card left" style="--c:#f0b7e8">
+  <img class="shot" src="img/block-blossom.jpg" alt="Block Blossom screenshot" loading="lazy" width="120" height="260">
+  <div class="info">
+    <div class="head"><img class="ico" src="icons/block-blossom.jpg" alt="" width="52" height="52"><h2>Block Blossom</h2></div>
+    <p>Relaxing block puzzle. Grow your garden.</p>
+    <a class="btn" href="https://apps.apple.com/app/id6821702244?ct=ig_hub_block-blossom">Get on App Store</a>
+  </div>
 </section>
-<section class="card">
-  <img src="icons/bus-buddies.jpg" alt="Bus Buddies icon" width="72" height="72">
-  <div class="info"><h2>Bus Buddies</h2><p>Sort the colourful bus jam.</p><div class="row"><a class="btn primary" href="https://apps.apple.com/app/id6821832967?ct=ig_hub_bus-buddies">Get on App Store</a></div></div>
+<section class="card right" style="--c:#ffd23f">
+  <img class="shot" src="img/bus-buddies.jpg" alt="Bus Buddies screenshot" loading="lazy" width="120" height="260">
+  <div class="info">
+    <div class="head"><img class="ico" src="icons/bus-buddies.jpg" alt="" width="52" height="52"><h2>Bus Buddies</h2></div>
+    <p>Sort the colourful bus jam. Beep beep!</p>
+    <a class="btn" href="https://apps.apple.com/app/id6821832967?ct=ig_hub_bus-buddies">Get on App Store</a>
+  </div>
 </section>
-<footer>Made by one indie developer. Thanks for playing.</footer>
+<footer>Thanks for playing! Made with jelly and love.</footer>
 </main>
 <script>
 (function(){
@@ -63,7 +123,7 @@ footer{text-align:center;color:var(--soft);font-size:13px;margin-top:22px}
   try{if(!sessionStorage.getItem('hv')){sessionStorage.setItem('hv','1');send('visit');}}catch(e){send('visit');}
   document.addEventListener('click',function(e){
     var a=e.target.closest&&e.target.closest('a.btn');if(!a)return;
-    var card=a.closest('.card');var g=card&&card.querySelector('h2');
+    var card=a.closest('.card,.hero');var g=card&&card.querySelector('h2');
     send('tap',(g?g.textContent:'')+(a.href.indexOf('apps.apple.com')>-1?' (store)':' (web)'));
   });
 })();
