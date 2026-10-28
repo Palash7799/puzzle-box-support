@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#4ab8ff" />
+    <title>Gumdrop Bounce</title>
+    <script type="module" crossorigin src="./assets/index-hKR2-hUC.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-xF5Xxzjm.css">
+  </head>
+  <body>
+    <canvas id="stage"></canvas>
+    <div id="hud" class="hidden">
+      <div class="pill" id="gems"><i class="gem"></i><b id="gemN">0</b><span id="gemT">/ 30</span></div>
+      <div class="pill" id="time">0:00</div>
+      <div class="pill rock hidden" id="rock">Rock form <b id="rockN"></b></div>
+      <button class="pill btn" id="pause" aria-label="Restart">⟲</button>
+    </div>
+    <div id="touch" class="hidden">
+      <div class="pad">
+        <button id="bl" aria-label="Left">◀</button>
+        <button id="br" aria-label="Right">▶</button>
+      </div>
+      <button id="bj" aria-label="Jump">▲</button>
+    </div>
+    <div id="title" class="screen">
+      <div class="card">
+        <h1>Gumdrop<br />Bounce</h1>
+        <p>Roll, bounce and gather every golden gem.</p>
+        <button id="play" class="big">PLAY</button>
+        <small>Arrow keys / WASD + Space &nbsp;·&nbsp; or the buttons on screen</small>
+      </div>
+    </div>
+    <div id="done" class="screen hidden">
+      <div class="card">
+        <h2>Level complete!</h2>
+        <div class="stats"><div><i class="gem"></i><b id="dGems"></b></div><div>⏱ <b id="dTime"></b></div><div>💥 <b id="dDeaths"></b></div></div>
+        <button id="again" class="big">PLAY AGAIN</button>
+      </div>
+    </div>
+  </body>
+</html>
