@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#4ab8ff" />
+    <title>Bob: Bounce Ball Tales</title>
+    <meta name="description" content="Bob: Bounce Ball Tales - roll and bounce a little red ball through 8 worlds of gems, traps and secrets. A classic bounce ball adventure." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&display=swap" rel="stylesheet" />
+    <script type="module" crossorigin src="./assets/index-D4ADxOFl.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Dm4fCNQz.css">
+  </head>
+  <body>
+    <canvas id="stage"></canvas>
+    <div id="hud" class="hidden">
+      <div class="pill" id="gems"><i class="gem"></i><b id="gemN">0</b><span id="gemT">/ 30</span></div>
+      <div class="pill" id="time">0:00</div>
+      <div class="pill rock hidden" id="rock">Rock form <b id="rockN"></b></div>
+      <button class="pill btn" id="mute" aria-label="Sound on or off">🔊</button>
+      <button class="pill btn" id="hudmap" aria-label="World map">☰</button>
+      <button class="pill btn" id="pause" aria-label="Restart">⟲</button>
+    </div>
+    <div id="touch" class="hidden">
+      <div class="pad">
+        <button id="bl" aria-label="Left">◀</button>
+        <button id="br" aria-label="Right">▶</button>
+      </div>
+      <div class="jumps">
+        <button id="bd" aria-label="Slam">▼</button>
+        <button id="bj" aria-label="Jump">▲</button>
+      </div>
+    </div>
+    <div id="rotate" class="hidden"><span class="phone">📱</span><b>Tip: turn your phone sideways for a bigger view</b></div>
+    <div id="swipehint" class="hidden"><div><b>Left thumb</b>: drag to roll &nbsp;·&nbsp; <b>Right thumb</b>: flick ⬆ jump, ⬇ slam</div></div>
+    <div id="title" class="screen">
+      <div class="titleart"></div>
+      <div class="titlebox">
+        <h1 class="logo"><span class="l1" data-t="Bob">Bob</span><span class="l2" data-t="Bounce Ball Tales">Bounce Ball Tales</span></h1>
+        <button id="play" class="playbtn loading" aria-label="Play"><i>▶</i><b class="go">PLAY</b><b class="ld">loading…</b></button>
+        <div class="trow">
+          <button id="tmute" class="tbtn purple" aria-label="Sound on or off"><svg viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4z" fill="#fff"/><path class="w" d="M16 8.5c1.6 1.8 1.6 5.2 0 7M18.6 6c3 3.2 3 8.8 0 12" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round"/><path class="x" d="M16.5 9.5l5 5M21.5 9.5l-5 5" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+          <button id="ctlBtn" class="tbtn blue" aria-label="Controls: buttons or swipe"><svg viewBox="0 0 24 24"><path d="M7 7h10a5 5 0 0 1 4.9 6l-.8 4a2.6 2.6 0 0 1-4.6 1L14.8 16H9.2l-1.7 2a2.6 2.6 0 0 1-4.6-1l-.8-4A5 5 0 0 1 7 7z" fill="#fff"/><path d="M8 10v4M6 12h4" stroke="#2f6fd8" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="11" r="1.1" fill="#2f6fd8"/><circle cx="18" cy="13" r="1.1" fill="#2f6fd8"/></svg><span id="ctlLbl">Buttons</span></button>
+          <div class="tbtn orange look" role="group" aria-label="Look"><button id="look2d">2D</button><button id="look3d">3D</button></div>
+        </div>
+      </div>
+    </div>
+    <div id="map" class="hidden">
+      <div class="mapart" id="mapart"></div>
+      <div class="maptop"><button class="pill btn" id="mapback" aria-label="Back">◀</button><b class="maptitle">World Map</b><div class="pill" id="mapgems"><i class="gem"></i><b id="mapgemN">0</b></div></div>
+    </div>
+    <div id="done" class="screen hidden">
+      <div class="card">
+        <h2>Level complete!</h2>
+        <div class="stats"><div><i class="gem"></i><b id="dGems"></b></div><div>⏱ <b id="dTime"></b></div><div>💥 <b id="dDeaths"></b></div></div>
+        <button id="next" class="big hidden">NEXT WORLD ▶</button>
+        <button id="again" class="big">PLAY AGAIN</button>
+        <button id="tomap" class="big alt">MAP</button>
+      </div>
+    </div>
+  </body>
+</html>
