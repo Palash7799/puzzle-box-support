@@ -13,8 +13,8 @@
     <meta name="apple-mobile-web-app-title" content="Bob Bounce" />
     <link rel="apple-touch-icon" href="./icon-180.png" />
     <meta name="description" content="Bob: Bounce Ball Tales - roll and bounce Bob, a little red ball, through 8 worlds of gems, traps and secrets. A classic bounce ball adventure." />
-    <script type="module" crossorigin src="./assets/index-BHMcMfZ7.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BLTLn4fm.css">
+    <script type="module" crossorigin src="./assets/index-B1d9o2Qm.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BEduTBsr.css">
   </head>
   <body>
     <canvas id="stage"></canvas>
@@ -40,12 +40,12 @@
     <div id="title" class="screen">
       <div class="titleart"></div>
       <div class="titlebox">
-        <h1 class="logo"><span class="l1" data-t="Bob">Bob</span><span class="l2" data-t="Bounce Ball Tales">Bounce Ball Tales</span></h1>
-        <button id="play" class="playbtn loading" aria-label="Play"><i>▶</i><b class="go">PLAY</b><b class="ld">loading…</b></button>
+        <h1 class="logo"><img class="logoimg" src="./ui/logo.png" alt="Bob: Bounce Ball Tales" draggable="false" /></h1>
+        <button id="play" class="playbtn loading" aria-label="Play"><img src="./ui/btn-play.png" alt="" draggable="false" /><b class="ld">loading…</b></button>
         <div class="trow">
-          <button id="tmute" class="tbtn purple" aria-label="Sound on or off"><svg viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4z" fill="#fff"/><path class="w" d="M16 8.5c1.6 1.8 1.6 5.2 0 7M18.6 6c3 3.2 3 8.8 0 12" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round"/><path class="x" d="M16.5 9.5l5 5M21.5 9.5l-5 5" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg></button>
-          <button id="ctlBtn" class="tbtn blue" aria-label="Controls: buttons or swipe"><svg viewBox="0 0 24 24"><path d="M7 7h10a5 5 0 0 1 4.9 6l-.8 4a2.6 2.6 0 0 1-4.6 1L14.8 16H9.2l-1.7 2a2.6 2.6 0 0 1-4.6-1l-.8-4A5 5 0 0 1 7 7z" fill="#fff"/><path d="M8 10v4M6 12h4" stroke="#2f6fd8" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="11" r="1.1" fill="#2f6fd8"/><circle cx="18" cy="13" r="1.1" fill="#2f6fd8"/></svg><span id="ctlLbl">Buttons</span></button>
-          <div class="tbtn orange look" role="group" aria-label="Look"><button id="look2d">2D</button><button id="look3d">3D</button></div>
+          <button id="tmute" class="ibtn" aria-label="Sound on or off"><img src="./ui/btn-sound.png" alt="" draggable="false" /></button>
+          <button id="ctlBtn" class="ibtn" aria-label="Controls: buttons or swipe"><img src="./ui/btn-controls.png" alt="" draggable="false" /><span id="ctlLbl" class="cap">Buttons</span></button>
+          <button id="lookBtn" class="ibtn" aria-label="2D or 3D look"><img src="./ui/btn-look.png" alt="" draggable="false" /><span id="lookLbl" class="cap">3D</span></button>
         </div>
       </div>
     </div>
