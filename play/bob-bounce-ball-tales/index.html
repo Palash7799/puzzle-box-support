@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
     <meta name="theme-color" content="#4ab8ff" />
+    
     <title>Bob: Bounce Ball Tales</title>
     <!-- added to the Home Screen it opens full screen, without the browser's bars -->
     <link rel="manifest" href="./manifest.webmanifest" />
@@ -13,15 +14,16 @@
     <meta name="apple-mobile-web-app-title" content="Bob Bounce" />
     <link rel="apple-touch-icon" href="./icon-180.png" />
     <meta name="description" content="Bob: Bounce Ball Tales - roll and bounce Bob, a little red ball, through 8 worlds of gems, traps and secrets. A classic bounce ball adventure." />
-    <script type="module" crossorigin src="./assets/index-BXl-JBZu.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CjdGvyXA.css">
+    <script type="module" crossorigin src="./assets/index-D6QItFyB.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-tPqVeROk.css">
   </head>
   <body>
     <canvas id="stage"></canvas>
     <div id="hud" class="hidden">
       <div class="pill" id="gems"><i class="gem"></i><b id="gemN">0</b><span id="gemT">/ 30</span></div>
       <div class="pill" id="time">0:00</div>
-      <div class="pill rock hidden" id="rock">Rock form <b id="rockN"></b></div>
+      <button class="pill rock btn hidden" id="rock" aria-label="Turn back into Bob">Rock form <b id="rockN"></b><span>tap: back to Bob</span></button>
+      <button class="pill btn hidden" id="skip" aria-label="Watch an ad to skip this level">⏭ Skip (ad)</button>
       <button class="pill btn" id="mute" aria-label="Sound on or off">🔊</button>
       <button class="pill btn" id="hudmap" aria-label="World map">☰</button>
       <button class="pill btn" id="pause" aria-label="Restart">⟲</button>
