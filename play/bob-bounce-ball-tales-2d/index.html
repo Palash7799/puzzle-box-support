@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#4ab8ff" />
+    
+    <title>Bob: Bounce Ball Tales</title>
+    <!-- added to the Home Screen it opens full screen, without the browser's bars -->
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Bob Bounce" />
+    <link rel="apple-touch-icon" href="./icon-180.png" />
+    <meta name="description" content="Bob: Bounce Ball Tales - roll and bounce Bob, a little red ball, through 8 worlds of gems, traps and secrets. A classic bounce ball adventure." />
+    <script type="module" crossorigin src="./assets/index-Qo8nXe3M.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-tPqVeROk.css">
+  </head>
+  <body>
+    <canvas id="stage"></canvas>
+    <div id="hud" class="hidden">
+      <div class="pill" id="gems"><i class="gem"></i><b id="gemN">0</b><span id="gemT">/ 30</span></div>
+      <div class="pill" id="time">0:00</div>
+      <button class="pill rock btn hidden" id="rock" aria-label="Turn back into Bob">Rock form <b id="rockN"></b><span>tap: back to Bob</span></button>
+      <button class="pill btn hidden" id="skip" aria-label="Watch an ad to skip this level">⏭ Skip (ad)</button>
+      <button class="pill btn" id="mute" aria-label="Sound on or off">🔊</button>
+      <button class="pill btn" id="hudmap" aria-label="World map">☰</button>
+      <button class="pill btn" id="pause" aria-label="Restart">⟲</button>
+    </div>
+    <div id="touch" class="hidden">
+      <div class="pad">
+        <button id="bl" aria-label="Left">◀</button>
+        <button id="br" aria-label="Right">▶</button>
+      </div>
+      <div class="jumps">
+        <button id="bd" aria-label="Slam">▼</button>
+        <button id="bj" aria-label="Jump">▲</button>
+      </div>
+    </div>
+    <div id="swipehint" class="hidden"><div><b>Left thumb</b>: drag to roll &nbsp;·&nbsp; <b>Right thumb</b>: flick ⬆ jump, ⬇ slam</div></div>
+    <div id="title" class="screen">
+      <div class="titleart"></div>
+      <div class="titlebox">
+        <h1 class="logo"><img class="logoimg" src="./ui/logo.png" alt="Bob: Bounce Ball Tales" draggable="false" /></h1>
+        <button id="play" class="playbtn loading" aria-label="Play"><img src="./ui/btn-play.png" alt="" draggable="false" /><b class="ld">loading…</b></button>
+        <div class="trow">
+          <button id="tmute" class="ibtn" aria-label="Sound on or off"><img src="./ui/btn-sound.png" alt="" draggable="false" /></button>
+          <button id="ctlBtn" class="ibtn" aria-label="Controls: buttons or swipe"><img src="./ui/btn-controls.png" alt="" draggable="false" /><span id="ctlLbl" class="cap">Buttons</span></button>
+          <button id="lookBtn" class="ibtn" aria-label="2D or 3D look"><img src="./ui/btn-look.png" alt="" draggable="false" /><span id="lookLbl" class="cap">3D</span></button>
+        </div>
+      </div>
+    </div>
+    <div id="map" class="hidden">
+      <div class="mapart" id="mapart"></div>
+      <div id="maploading" class="hidden"></div>
+      <div class="maptop"><button class="pill btn" id="mapback" aria-label="Back">◀</button><b class="maptitle">Bob's World</b><div class="pill" id="mapgems"><i class="gem"></i><b id="mapgemN">0</b></div></div>
+    </div>
+    <div id="done" class="screen hidden">
+      <div class="card">
+        <h2>Bob made it!</h2>
+        <div class="stats"><div><i class="gem"></i><b id="dGems"></b></div><div>⏱ <b id="dTime"></b></div><div>💥 <b id="dDeaths"></b></div></div>
+        <button id="next" class="big hidden">NEXT WORLD ▶</button>
+        <button id="again" class="big">PLAY AGAIN</button>
+        <button id="tomap" class="big alt">MAP</button>
+      </div>
+    </div>
+  </body>
+</html>
