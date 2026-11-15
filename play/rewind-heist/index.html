@@ -6,25 +6,21 @@
     <meta name="theme-color" content="#2a1d17" />
     
     <title>Rewind Heist</title>
-    <script type="module" crossorigin src="./assets/index-a215Yv2q.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-C6a2MpHU.css">
+    <script type="module" crossorigin src="./assets/index-KtneDr4v.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DKa2fJuw.css">
   </head>
   <body>
     <canvas id="stage"></canvas>
     <div id="hud">
+      <button id="menu" class="btn" aria-label="Levels">☰</button>
       <div id="crew"></div>
       <div id="clock"><i id="clockbar"></i></div>
       <button id="done" class="btn" aria-label="End this take">⏹ Done</button>
       <button id="undo" class="btn" aria-label="Remove the last thief">↶</button>
       <button id="restart" class="btn" aria-label="Restart the heist">⟲</button>
     </div>
-    <div id="msg" class="screen">
-      <div class="card">
-        <h1>Rewind<br /><span>Heist</span></h1>
-        <p>Every take you play becomes a partner.<br />Rewind, then rob the vault together.</p>
-        <button id="go" class="big">Start heist</button>
-      </div>
-    </div>
+    <div id="lvl"></div>
+    <div id="msg" class="screen hidden"></div>
     <div id="hint"></div>
   </body>
 </html>
