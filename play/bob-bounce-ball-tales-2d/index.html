@@ -14,28 +14,28 @@
     <meta name="apple-mobile-web-app-title" content="Bob Bounce" />
     <link rel="apple-touch-icon" href="./icon-180.png" />
     <meta name="description" content="Bob: Bounce Ball Tales - roll and bounce Bob, a little red ball, through 8 worlds of gems, traps and secrets. A classic bounce ball adventure." />
-    <script type="module" crossorigin src="./assets/index-C2yqPPA2.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BXzu0MFf.css">
+    <script type="module" crossorigin src="./assets/index-DD-nEt6a.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DLN49uxk.css">
   </head>
   <body>
     <canvas id="stage"></canvas>
     <div id="hud" class="hidden">
       <div class="pill" id="gems"><i class="gem"></i><b id="gemN">0</b><span id="gemT">/ 30</span></div>
-      <div class="pill" id="time">0:00</div>
+      <div class="pill" id="time"><svg class="ic clk" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path class="ln" d="M12 9v4l3 2M10 3h4"/></svg><b id="timeN">0:00</b></div>
       <button class="pill rock btn hidden" id="rock" aria-label="Turn back into Bob">Rock form <b id="rockN"></b><span>tap: back to Bob</span></button>
       <button class="pill btn hidden" id="skip" aria-label="Watch an ad to skip this level">⏭ Skip (ad)</button>
-      <button class="pill btn" id="mute" aria-label="Sound on or off">🔊</button>
-      <button class="pill btn" id="hudmap" aria-label="World map">☰</button>
-      <button class="pill btn" id="pause" aria-label="Restart">⟲</button>
+      <button class="pill btn rb" id="mute" aria-label="Sound on or off"><svg class="ic on" viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4z"/><path class="ln" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12"/></svg><svg class="ic off" viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4z"/><path class="ln" d="M16.5 9.5l5 5M21.5 9.5l-5 5"/></svg></button>
+      <button class="pill btn rb" id="hudmap" aria-label="World map"><svg class="ic" viewBox="0 0 24 24"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path class="ln" d="M9 4v14M15 6v14"/></svg></button>
+      <button class="pill btn rb" id="pause" aria-label="Restart"><svg class="ic" viewBox="0 0 24 24"><path class="ln" d="M5 12a7 7 0 1 0 2.2-5.1"/><path d="M3.5 3.5l5 1-1.5 5z"/></svg></button>
     </div>
     <div id="touch" class="hidden">
       <div class="pad">
-        <button id="bl" aria-label="Left">◀</button>
-        <button id="br" aria-label="Right">▶</button>
+        <button id="bl" aria-label="Left"><svg viewBox="0 0 24 24"><path d="M15.5 4.5L8 12l7.5 7.5"/></svg></button>
+        <button id="br" aria-label="Right"><svg viewBox="0 0 24 24"><path d="M8.5 4.5L16 12l-7.5 7.5"/></svg></button>
       </div>
       <div class="jumps">
-        <button id="bd" aria-label="Slam">▼</button>
-        <button id="bj" aria-label="Jump">▲</button>
+        <button id="bd" aria-label="Slam"><svg viewBox="0 0 24 24"><path d="M6 7l6 6 6-6"/><path d="M5 18h14"/></svg></button>
+        <button id="bj" aria-label="Jump"><svg viewBox="0 0 24 24"><path d="M5 15l7-7 7 7"/></svg></button>
       </div>
     </div>
     <div id="swipehint" class="hidden"><div><b>Left thumb</b>: drag to roll &nbsp;·&nbsp; <b>Right thumb</b>: flick ⬆ jump, ⬇ slam</div></div>
@@ -57,12 +57,22 @@
       <div class="maptop"><button class="pill btn" id="mapback" aria-label="Back">◀</button><b class="maptitle">Bob's World</b><div class="pill" id="mapgems"><i class="gem"></i><b id="mapgemN">0</b></div></div>
     </div>
     <div id="done" class="screen hidden">
-      <div class="card">
-        <h2>Bob made it!</h2>
-        <div class="stats"><div><i class="gem"></i><b id="dGems"></b></div><div>⏱ <b id="dTime"></b></div><div>💥 <b id="dDeaths"></b></div></div>
-        <button id="next" class="big hidden">NEXT WORLD ▶</button>
-        <button id="again" class="big">PLAY AGAIN</button>
-        <button id="tomap" class="big alt">MAP</button>
+      <div class="rays"></div>
+      <div id="confetti"></div>
+      <div class="card win">
+        <div class="ribbon"><span>Bob made it!</span></div>
+        <img class="cheer" src="./sprites2d/bob-cheer.png" alt="" draggable="false" />
+        <div class="stars"><i id="st1"><svg viewBox="0 0 48 48"><path d="M24 3.5l6.2 12.6 13.9 2-10 9.8 2.4 13.8L24 35.2l-12.5 6.5 2.4-13.8-10-9.8 13.9-2z"/></svg></i><i id="st2" class="mid"><svg viewBox="0 0 48 48"><path d="M24 3.5l6.2 12.6 13.9 2-10 9.8 2.4 13.8L24 35.2l-12.5 6.5 2.4-13.8-10-9.8 13.9-2z"/></svg></i><i id="st3"><svg viewBox="0 0 48 48"><path d="M24 3.5l6.2 12.6 13.9 2-10 9.8 2.4 13.8L24 35.2l-12.5 6.5 2.4-13.8-10-9.8 13.9-2z"/></svg></i></div>
+        <div class="stats">
+          <div class="chip"><i class="gem"></i><b id="dGems"></b></div>
+          <div class="chip"><svg class="ic clk" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path class="ln" d="M12 9v4l3 2M10 3h4"/></svg><b id="dTime"></b></div>
+          <div class="chip"><svg class="ic skull" viewBox="0 0 24 24"><path d="M12 3a8 8 0 0 0-8 8c0 2.6 1.3 4.6 3 5.8V20h10v-3.2c1.7-1.2 3-3.2 3-5.8a8 8 0 0 0-8-8z"/><circle class="hole" cx="9" cy="11.5" r="1.8"/><circle class="hole" cx="15" cy="11.5" r="1.8"/></svg><b id="dDeaths"></b></div>
+        </div>
+        <div class="brow">
+          <button id="tomap" class="rbtn blue" aria-label="Map"><svg class="ic" viewBox="0 0 24 24"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path class="ln" d="M9 4v14M15 6v14"/></svg></button>
+          <button id="again" class="rbtn orange" aria-label="Play again"><svg class="ic" viewBox="0 0 24 24"><path class="ln" d="M5 12a7 7 0 1 0 2.2-5.1"/><path d="M3.5 3.5l5 1-1.5 5z"/></svg></button>
+          <button id="next" class="gbtn hidden">NEXT <svg class="ic" viewBox="0 0 24 24"><path d="M7 4l11 8-11 8z"/></svg></button>
+        </div>
       </div>
     </div>
   </body>
