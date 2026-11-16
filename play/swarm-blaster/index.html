@@ -3,25 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
-    <meta name="theme-color" content="#22223a" />
+    <meta name="theme-color" content="#151b3d" />
     
     <title>Swarm Blaster</title>
-    <script type="module" crossorigin src="./assets/index-CwqbqQMQ.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DFyPYEMh.css">
+    <script type="module" crossorigin src="./assets/index-7LfB_TY4.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-bIF5i-vU.css">
   </head>
   <body>
     <canvas id="stage"></canvas>
+    <div id="shade"></div>
     <div id="hud" class="hidden">
-      <div id="xp"><i id="xpbar"></i><b id="lv">1</b></div>
-      <div id="row">
-        <div id="hp"><i id="hpbar"></i></div>
+      <div id="topbar"><div id="lvbadge"><b id="lv">1</b></div><div id="xp"><i id="xpbar"></i></div></div>
+      <div id="row2">
+        <div id="weps"></div>
         <div id="time">0:00</div>
-        <div id="kills">💀 0</div>
-        <button id="pause" aria-label="Pause">❚❚</button>
+        <div id="right"><button id="pause" aria-label="Pause"></button><div id="kills"><i id="skullic"></i><b>0</b></div></div>
       </div>
-      <div id="boss" class="hidden"><span id="bossname">Boss</span><div><i id="bossbar"></i></div></div>
-      <div id="weps"></div>
+      <div id="boss" class="hidden"><div class="bname"><i id="bossic"></i><span id="bossname">BOSS</span></div><div class="bbar"><i id="bossbar"></i></div></div>
     </div>
+    <div id="hpw" class="hidden"><i id="hpbar"></i></div>
     <div id="banner" class="hidden"></div>
     <div id="hurt"></div>
     <div id="stick" class="hidden"><i></i></div>
