@@ -14,8 +14,8 @@
     <meta name="apple-mobile-web-app-title" content="Bob Bounce" />
     <link rel="apple-touch-icon" href="./icon-180.png" />
     <meta name="description" content="Bob: Bounce Ball Tales - roll and bounce Bob, a little red ball, through 8 worlds of gems, traps and secrets. A classic bounce ball adventure." />
-    <script type="module" crossorigin src="./assets/index-DPIvZvZn.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-D7RlPVsE.css">
+    <script type="module" crossorigin src="./assets/index-ugQVwOMX.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-NoteW8ch.css">
   </head>
   <body>
     <canvas id="stage"></canvas>
@@ -56,6 +56,23 @@
       <div class="mapart" id="mapart"></div>
       <div id="maploading" class="hidden"></div>
       <div class="maptop"><button class="pill btn" id="mapback" aria-label="Back"><svg class="ic" viewBox="0 0 24 24" style="font-size:22px"><path d="M16 4L6 12l10 8z"/></svg></button><b class="maptitle">Bob's World</b><div class="pill" id="mapgems"><svg class="gm" viewBox="0 0 32 32"><path d="M9 4h14l7 8-14 17L2 12z" fill="#7fe8ff" stroke="#1d0f33" stroke-width="2.6" stroke-linejoin="round"/><path d="M2 12h28M9 4l3 8 4 17 4-17 3-8" fill="none" stroke="#1d0f33" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 12l4-8 4 8z" fill="#e8fbff"/><path d="M3.5 12h8.5l4 15z" fill="#36b8e8"/></svg><b id="mapgemN">0</b></div></div>
+    </div>
+    <div id="stagepick" class="screen hidden">
+      <div class="card win sp">
+        <div class="ribbon"><span id="spName"></span></div>
+        <p id="spTeach"></p>
+        <div id="spList"></div>
+        <button id="spClose" class="rbtn blue" aria-label="Back to map"><svg class="ic" viewBox="0 0 24 24"><path d="M16 4L6 12l10 8z"/></svg></button>
+      </div>
+    </div>
+    <div id="newform" class="screen hidden">
+      <div class="card win nf">
+        <div class="ribbon"><span>New form!</span></div>
+        <img id="nfImg" class="nfimg" src="./sprites2d/bob-bubble.png" alt="" draggable="false" />
+        <h2 id="nfName"></h2>
+        <p id="nfText"></p>
+        <button id="nfGo" class="gbtn">LET'S GO <svg class="ic" viewBox="0 0 24 24"><path d="M7 4l11 8-11 8z"/></svg></button>
+      </div>
     </div>
     <div id="done" class="screen hidden">
       <div class="rays"></div>
